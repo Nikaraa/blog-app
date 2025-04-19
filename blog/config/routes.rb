@@ -14,7 +14,9 @@ Rails.application.routes.draw do
   # get "/articles/:id", to: "articles#show"
   
   # to get these routes created we can use:
-  resources :articles
+  resources :articles do
+    resources :comments
+  end
   # that creates us all the crud methods, like the JPA dependency in spring boot 
   # bin/rails routes shows us all the mapped methods
 
