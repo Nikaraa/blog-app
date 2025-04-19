@@ -1,4 +1,7 @@
 class ArticlesController < ApplicationController
+  # add basic authentication except for index and show mapped routes
+  http_basic_authenticate_with name: "dhh", password: "password", except: [:index, :show]
+  
   def index
     @articles = Article.all
   end
